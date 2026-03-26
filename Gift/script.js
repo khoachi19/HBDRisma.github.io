@@ -37,7 +37,11 @@ for (let i = 0; i < konten.length - 1; i++) {
 openBtn.onclick = () => {
   musikA.play();
   if (isKlikAudio) klikA.play();
-  clickHandler(1);
+
+  openBook();
+  currentLocation = 0;
+  paperHandler(-1);
+
   btnContainer.classList.add("hide");
   setTimeout(() => {
     openBtn.classList.remove("show");
@@ -132,7 +136,6 @@ function goNextPage() {
     if (currentLocation == paperTotal - 1) closeBook(0);
     else openBook();
 
-    // console.log(`Active now : ${currentLocation}`);
     currentLocation++;
   }
 }
